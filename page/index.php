@@ -2,45 +2,21 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-
 	<!-- Mon ficher CSS -->
 	<link rel="stylesheet" type="text/css" href="../assets/style.css">
 
-	<!-- CDN Semantic ui -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
-
-	<!-- Ajax-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
-	<!-- Include de fichier PHP -->
 	<?php
+	include('include/head.html');
 	include('../get/getArtist.php');
 	include('../get/getAlbum.php');
 	?>
-	<title>Chinook</title>
 </head>
 
 <body>
 	<div id="body">
-		<div id="navbar" class="ui inverted menu">
-			<div class="header item">Chinook</div>
-			<a class="item" href="index.php">Index</a>
-			<a class="item" href="artist.php">Artist</a>
-			<a class="item" href="album.php">Album</a>
-			<a class="item" href="comment.php">Comment</a>
-
-			<div class="right menu">
-				<div class="item">
-					<div id="signup" class="ui primary button">Signup</div>
-				</div>
-				<div class="item">
-					<div id="login" class="ui button">Login</div>
-				</div>
-			</div>
-		</div>
 
 		<?php
+		include('include/navbar.html');
 		include('include/signup.html');
 		include('include/login.html');
 		?>
@@ -54,7 +30,7 @@
 				<div id="flex">
 
 					<div class="ui inverted raised segment">
-						<form class="ui inverted form" method="post" action="add/addArtist.php">
+						<form class="ui inverted form" method="post" action="../add/addArtist.php">
 							<h2>Add an artist :</h2>
 							<div class="required field">
 								<label>First name</label>
@@ -72,7 +48,7 @@
 
 
 					<div class="ui inverted raised segment">
-						<form class="ui inverted form" method="post" action="add/addAlbum.php">
+						<form class="ui inverted form" method="post" action="../add/addAlbum.php">
 							<h2>Add an album :</h2>
 							<div class="required field">
 								<label>Album artist</label>
@@ -97,7 +73,7 @@
 
 
 					<div id="comment" class="ui inverted raised segment">
-						<form class="ui inverted form" method="post" action="add/addComment.php">
+						<form class="ui inverted form" method="post" action="../add/addComment.php">
 							<h2>Leave a comment :</h2>
 							<div class="required field">
 								<label>Album </label>
@@ -121,7 +97,7 @@
 					</div>
 
 				</div>
-				<form method="post" action="clear.php" onsubmit="return confirm('Do you really want to clear all tables ?');">
+				<form method="post" action="../get/clear.php" onsubmit="return confirm('Do you really want to clear all tables ?');">
 					<button class="ui inverted red button" type="submit">Clear all tables</button>
 				</form>
 				<div class="ui divider"></div>

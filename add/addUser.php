@@ -1,16 +1,16 @@
 <?php
 // On récupere les données envoyer par la page index avec la méthod POST
-$idUser = $_POST["idUser"];
-$login = $_POST["login"];
-$password = $_POST["password"];
+$username = $_POST["username"];
+$pass = $_POST["pass"];
+$email = $_POST["email"];
 
-include('../PDO_connection.php');
+include('../get/PDO_connection.php');
 
 // Préparation de la requête
-$sql = "INSERT INTO album (title, idArtist) VALUES ('" . $title . "', " . $idArtist . ");";
+$sql = "INSERT INTO user (username, pass, email) VALUES ('" . $username . "', '" . $pass . "', '" . $email . "');";
 // Execution de la requête
 $req = $bdd->query($sql);
 
 // Redirection automatique vers index.html
-header("Location: ../index.php");
+header("Location: ../page/index.php");
 ?>

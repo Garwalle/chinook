@@ -2,33 +2,23 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+	<!-- Mon ficher CSS -->
+	<link rel="stylesheet" type="text/css" href="../assets/style.css">
+
 	<?php
-	include('../include/getComment.php');
+	include('include/head.html');
+	include('../get/getComment.php');
 	?>
-	<title>Chinook</title>
 </head>
 
 <body>
 	<div id="body">
-		<div id="navbar" class="ui inverted menu">
-			<div class="header item">Chinook</div>
-			<a class="item" href="index.php">Index</a>
-			<a class="item" href="artist.php">Artist</a>
-			<a class="item" href="album.php">Album</a>
-			<a class="item" href="comment.php">Comment</a>
 
-			<div class="right menu">
-				<div class="item">
-					<div class="ui primary button">Sign up</div>
-				</div>
-				<div class="item">
-					<div class="ui button">Log-in</div>
-				</div>
-			</div>
-		</div>
+		<?php
+		include('include/navbar.html');
+		include('include/signup.html');
+		include('include/login.html');
+		?>
 
 		<div id="container" class="ui container">
 
@@ -59,12 +49,12 @@
 						?>
 					</tbody>
 				</table>
-
-
-				<div class="ui divider"></div>
 			</div>
 		</div>
 	</div>
 </body>
 
 </html>
+
+<!-- Mon fichier js -->
+<script type="text/javascript" src="../assets/js.js"></script>

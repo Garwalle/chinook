@@ -17,6 +17,7 @@
 
 DROP DATABASE IF EXISTS `chinook`;
 CREATE DATABASE `chinook`;
+USE `chinook`;
 
 -- --------------------------------------------------------
 
@@ -26,10 +27,10 @@ CREATE DATABASE `chinook`;
 
 CREATE TABLE `user` (
   `id` int(45) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `login` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `role` varchar(10) NOT NULL
+  `username` varchar(20) NOT NULL,
+  `pass` varchar(20) NOT NULL,
+  `email` varchar(320) NOT NULL,
+  `userRole` varchar(10)
 );
 
 -- --------------------------------------------------------

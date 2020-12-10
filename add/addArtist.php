@@ -3,7 +3,7 @@
 $firstname = $_POST["firstname"];
 $lastname = $_POST["lastname"];
 
-include('../PDO_connection.php');
+include('../get/PDO_connection.php');
 
 // Préparation de la requête
 $sql = "INSERT INTO artist (firstname, lastname) VALUES ('" . $firstname . "', '" . $lastname . "');";
@@ -11,5 +11,5 @@ $sql = "INSERT INTO artist (firstname, lastname) VALUES ('" . $firstname . "', '
 $req = $bdd->query($sql);
 
 // Redirection automatique vers index.html
-header("Location: ../index.php");
+header("Location: ../page/index.php");
 ?>

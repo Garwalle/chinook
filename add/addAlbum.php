@@ -3,7 +3,7 @@
 $idArtist = $_POST["idArtist"];
 $title = $_POST["title"];
 
-include('../PDO_connection.php');
+include('../get/PDO_connection.php');
 
 // Préparation de la requête
 $sql = "INSERT INTO album (title, idArtist) VALUES ('" . $title . "', " . $idArtist . ");";
@@ -11,5 +11,5 @@ $sql = "INSERT INTO album (title, idArtist) VALUES ('" . $title . "', " . $idArt
 $req = $bdd->query($sql);
 
 // Redirection automatique vers index.html
-header("Location: ../index.php");
+header("Location: ../page/index.php");
 ?>
