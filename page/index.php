@@ -15,8 +15,8 @@
 
 	<!-- Include de fichier PHP -->
 	<?php
-	include('../include/getArtist.php');
-	include('../include/getAlbum.php');
+	include('../get/getArtist.php');
+	include('../get/getAlbum.php');
 	?>
 	<title>Chinook</title>
 </head>
@@ -34,49 +34,20 @@
 				<div class="item">
 					<div id="signup" class="ui primary button">Sign up</div>
 				</div>
-				<div id="login" class="item">
-					<div class="ui button">Log-in</div>
+				<div class="item">
+					<div id="login" class="ui button">Log-in</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="signupMessage" class="ui inverted attached message hidden">
-			<i class="close icon"></i>
-			<div class="ui attached message">
-				<div class="header">
-					Hey new user !
-				</div>
-				<p>Fill out the form below to sign-up for a new account</p>
-			</div>
-			<form class="ui inverted form attached fluid segment" method="post" action="add/user.php">
-				<div class="two fields">
-					<div class="field">
-						<label>Login</label>
-						<input placeholder="First Name" type="text" required>
-					</div>
-					<div class="field">
-						<label>Password</label>
-						<input placeholder="Password" type="password" required>
-					</div>
-
-				</div>
-				<div class="field">
-					<label>Mail</label>
-					<input placeholder="Mail" type="email" required>
-				</div>
-				<button class="ui inverted green button" type="submit">Submit</button>
-			</form>
-		</div>
-
+		<!-- TODO -->
+		<?php include('include/signup.htm');?>
 
 		<div id="container" class="ui container">
 
 			<div id="mainSegment" class="ui segment">
 				<h1 id="hi">Choose an action :</h1>
 				<div class="ui divider"></div>
-
-
-
 
 				<div id="flex">
 
