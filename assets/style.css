@@ -17,7 +17,7 @@
 
 #mainSegment {
 	background-color: #28292e; 
-	margin-top: 2vh;
+	margin-top: 4vh;
 	border-radius: 2vh;
 	padding: 2vh;
 }
@@ -50,11 +50,17 @@
 }
 
 #signupMessage {
-	border-radius: 2vh;
-	padding: 2vh;
+	display: none;
 	right: 0.5vh;
-	top: 4vh;
+	top: 5.2vh;
 	position:absolute;
 	z-index: 10;
-	box-shadow: 0 0 3px #ffffff, 0 0 5px #ffffff;
+}
+
+#loginMessage {
+	display: none;
+	right: 0.5vh;
+	top: 5.2vh;
+	position:absolute;
+	z-index: 10;
 }

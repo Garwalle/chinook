@@ -32,16 +32,18 @@
 
 			<div class="right menu">
 				<div class="item">
-					<div id="signup" class="ui primary button">Sign up</div>
+					<div id="signup" class="ui primary button">Signup</div>
 				</div>
 				<div class="item">
-					<div id="login" class="ui button">Log-in</div>
+					<div id="login" class="ui button">Login</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- TODO -->
-		<?php include('include/signup.htm');?>
+		<?php
+		include('include/signup.html');
+		include('include/login.html');
+		?>
 
 		<div id="container" class="ui container">
 
