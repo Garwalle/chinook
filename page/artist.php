@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
-	<?php 
-	include('include/getArtist.php');
+	<?php
+	include('../include/getArtist.php');
 	?>
 	<title>Chinook</title>
 </head>
@@ -14,15 +15,17 @@
 	<div id="body">
 		<div id="navbar" class="ui inverted menu">
 			<div class="header item">Chinook</div>
-			<a class="item" href="index.php">Action</a>
+			<a class="item" href="index.php">Index</a>
 			<a class="item" href="artist.php">Artist</a>
 			<a class="item" href="album.php">Album</a>
 			<a class="item" href="comment.php">Comment</a>
 
-			<div class="right item">
-				<div class="ui inverted action input">
-					<input type="text" placeholder="Navigate to">
-					<div class="ui button">Go</div>
+			<div class="right menu">
+				<div class="item">
+					<div class="ui primary button">Sign up</div>
+				</div>
+				<div class="item">
+					<div class="ui button">Log-in</div>
 				</div>
 			</div>
 		</div>
@@ -44,12 +47,12 @@
 					</thead>
 					<tbody>
 						<?php
-						$i=0;
+						$i = 0;
 						foreach ($idArtist as &$id) {
 							echo "<tr>";
-							echo "<td>".$id."</td>";
-							echo "<td>".$firstName[$i]."</td>";
-							echo "<td>".$lastName[$i]."</td>";
+							echo "<td>" . $id . "</td>";
+							echo "<td>" . $firstName[$i] . "</td>";
+							echo "<td>" . $lastName[$i] . "</td>";
 							echo "</tr>";
 							$i++;
 						}
@@ -63,4 +66,5 @@
 		</div>
 	</div>
 </body>
+
 </html>

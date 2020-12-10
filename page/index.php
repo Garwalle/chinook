@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Mon ficher CSS -->
+	<link rel="stylesheet" type="text/css" href="../assets/style.css">
+	<!-- CDN Semantic ui -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
-	<?php 
-	include('include/getArtist.php');
-	include('include/getAlbum.php');
+	<!-- Ajax-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!-- Mon fichier js -->
+	<script type="text/javascript" src="../assets/js.js"> </script>
+
+	<!-- Include de fichier PHP -->
+	<?php
+	include('../include/getArtist.php');
+	include('../include/getAlbum.php');
 	?>
 	<title>Chinook</title>
 </head>
@@ -15,14 +24,18 @@
 	<div id="body">
 		<div id="navbar" class="ui inverted menu">
 			<div class="header item">Chinook</div>
-			<a class="item" href="index.php">Action</a>
+			<a class="item" href="index.php">Index</a>
 			<a class="item" href="artist.php">Artist</a>
 			<a class="item" href="album.php">Album</a>
 			<a class="item" href="comment.php">Comment</a>
 
 			<div class="right menu">
-				<div class="item"><div class="ui primary button">Sign up</div></div>
-				<div class="item"><div class="ui button">Log-in</div></div>
+				<div onclick="window.location='add/addUser.php';" class="item">
+					<div class="ui primary button">Sign up</div>
+				</div>
+				<div onclick="window.location='';" class="item">
+					<div class="ui button">Log-in</div>
+				</div>
 			</div>
 		</div>
 
@@ -60,9 +73,9 @@
 								<label>Album artist</label>
 								<select name="idArtist" required>
 									<?php
-									$i=0;
+									$i = 0;
 									foreach ($idArtist as &$id) {
-										echo "<option value=\"".$id."\">".$firstName[$i]."</option>";
+										echo "<option value=\"" . $id . "\">" . $firstName[$i] . "</option>";
 										$i++;
 									}
 									?>
@@ -85,9 +98,9 @@
 								<label>Album </label>
 								<select name="idAlbum" required>
 									<?php
-									$i=0;
+									$i = 0;
 									foreach ($idAlbum as &$id) {
-										echo "<option value=\"".$id."\">".$title[$i]."</option>";
+										echo "<option value=\"" . $id . "\">" . $title[$i] . "</option>";
 										$i++;
 									}
 									?>
@@ -111,4 +124,5 @@
 		</div>
 	</div>
 </body>
+
 </html>

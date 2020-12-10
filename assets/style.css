@@ -11,19 +11,19 @@
 #container {
 	background-color: #36393f;
 	height: 100vh;
-	padding: 2em;
+	padding: 2.5vh;
 	color: white;
 }
 
 #mainSegment {
 	background-color: #28292e; 
-	margin-top: 4em;
-	border-radius: 1.8em;
-	padding: 2em;
+	margin-top: 5vh;
+	border-radius: 2vh;
+	padding: 2vh;
 }
 
 #flex {
-	height: 65vh;
+	height: 70vh;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -33,7 +33,7 @@
 
 .ui.inverted.raised.segment {
 	width:40vh;
-	border-radius: 1em;
+	border-radius: 1.5vh;
 	margin: 0;
 }
 

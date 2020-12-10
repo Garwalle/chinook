@@ -3,17 +3,10 @@
 $idArtist = $_POST["idArtist"];
 $title = $_POST["title"];
 
-// Connection à la base de donnée
-try {
-	$bdd = new PDO("mysql:host=localhost;dbname=chinook;charset=utf8", "root", "");
-}
-
-catch (Exception $e) {
-	die("Erreur : ".$e->get_Message());
-}
+include('../PDO_connection.php');
 
 // Préparation de la requête
-$sql = "INSERT INTO album (title, idArtist) VALUES ('".$title."', ".$idArtist.");";
+$sql = "INSERT INTO album (title, idArtist) VALUES ('" . $title . "', " . $idArtist . ");";
 // Execution de la requête
 $req = $bdd->query($sql);
 

@@ -21,6 +21,19 @@ CREATE DATABASE `chinook`;
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(45) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `login` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` varchar(10) NOT NULL
+);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `album`
 --
 

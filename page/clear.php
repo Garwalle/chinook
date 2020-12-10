@@ -1,12 +1,5 @@
 <?php
-// Connection à la base de donnée
-try {
-	$bdd = new PDO("mysql:host=localhost;dbname=chinook;charset=utf8", "root", "");
-}
-
-catch (Exception $e) {
-	die("Erreur : ".$e->get_Message());
-}
+include('../include/PDO_connection.php');
 
 // Suppression des données dans toutes les tabless (l'ordre des requêtes est important, du aux foreing key)
 $sql = "DELETE FROM `comment`; DELETE FROM `album`; DELETE FROM `artist`;";

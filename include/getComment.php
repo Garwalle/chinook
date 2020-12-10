@@ -1,12 +1,5 @@
 <?php
-// Connection à la base de donnée
-try {
-	$bdd = new PDO("mysql:host=localhost;dbname=chinook;charset=utf8", "root", "");
-}
-
-catch (Exception $e) {
-	die("Erreur : ".$e->get_Message());
-}
+include('PDO_connection.php');
 
 // Préparation de la requête
 $sql = "SELECT id,commentText,idAlbum FROM comment;";
