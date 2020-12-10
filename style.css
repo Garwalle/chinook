@@ -1,0 +1,50 @@
+#body {
+	background-color: #202225;
+}
+
+#navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+#container {
+	background-color: #36393f;
+	height: 100vh;
+	padding: 2em;
+	color: white;
+}
+
+#mainSegment {
+	background-color: #28292e; 
+	margin-top: 4em;
+	border-radius: 1.8em;
+	padding: 2em;
+}
+
+#flex {
+	height: 65vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+	flex-wrap: wrap;
+}
+
+.ui.inverted.raised.segment {
+	width:40vh;
+	border-radius: 1em;
+	margin: 0;
+}
+
+.ui.inverted.raised.segment h2 {
+	text-decoration: underline;
+}
+
+.ui.inverted.raised.segment#comment{
+	width:60vh;
+}
+
+.ui.inverted.raised.segment#comment textarea {
+	resize: none;
+}
