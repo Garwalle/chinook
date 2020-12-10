@@ -11,6 +11,17 @@ $sql = "INSERT INTO user (username, pass, email) VALUES ('" . $username . "', '"
 // Execution de la requête
 $req = $bdd->query($sql);
 
+// On crée une session avec l'id de l'utilisateur connecté
+session_start();
+$sql = "SELECT id,username,userRole FROM user WHERE email = '".$email."';";
+echo $sql;
+$req = $bdd->query($sql);
+while ($donnees = $req->fetch()) {
+    $_SESSION["CU_id"] = $donnees['id'];
+    $_SESSION["CU_username"] = $donnees['username'];
+    $_SESSION["CU_userRole"] = $donnees['userRole'];
+}
+
 // Redirection automatique vers index.html
 header("Location: ../page/index.php");
 ?>

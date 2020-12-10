@@ -26,11 +26,12 @@ USE `chinook`;
 --
 
 CREATE TABLE `user` (
-  `id` int(45) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id` int(45) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `pass` varchar(20) NOT NULL,
   `email` varchar(320) NOT NULL,
-  `userRole` varchar(10)
+  `userRole` varchar(10) NOT NULL DEFAULT 'client',
+  primary key (`id`, `email`)
 );
 
 -- --------------------------------------------------------

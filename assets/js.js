@@ -13,7 +13,6 @@ $(".close.icon").click(function () {
 
 signShowed = false;
 loginShowed = false;
-
 $("#signup").click(function () {
     if (!signShowed) {
         if (loginShowed) {
@@ -44,20 +43,19 @@ $("#login").click(function () {
     }
 });
 
-$("#signup, #signupMessage, #login, #loginMessage").click(function (e) {
-    e.stopPropagation();
-    return false;
-});
+$(document).mouseup(function (e) {
+    var signupMessage = $("#signupMessage");
+    var signup = $("#signup");
+    var loginMessage = $("#loginMessage");
+    var login = $("#login");
 
-$(document).click(function () {
-    if (signShowed) {
-        $("#signupMessage").fadeOut(250);
+    if (!signupMessage.is(e.target) && signupMessage.has(e.target).length === 0 && !signup.is(e.target)) {
+        signupMessage.fadeOut(250);
         signShowed = false;
     }
-    else if (loginShowed) {
-        $("#loginMessage").fadeOut(250);
+    
+    if (!loginMessage.is(e.target) && loginMessage.has(e.target).length === 0 && !login.is(e.target)) {
+        loginMessage.fadeOut(250);
         loginShowed = false;
     }
-});
-
-
+}); 
