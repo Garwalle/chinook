@@ -53,9 +53,15 @@ $(document).mouseup(function (e) {
         signupMessage.fadeOut(250);
         signShowed = false;
     }
-    
+
     if (!loginMessage.is(e.target) && loginMessage.has(e.target).length === 0 && !login.is(e.target)) {
         loginMessage.fadeOut(250);
         loginShowed = false;
     }
-}); 
+});
+
+function alertEmailTaken() {
+    $(document).ready(function () {
+        alert("I am an alert box!");
+    });
+}

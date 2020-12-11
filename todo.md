@@ -1,5 +1,3 @@
-clear.php : reset of user auto increment don't work
-
 do login
 
 do logout when logged
