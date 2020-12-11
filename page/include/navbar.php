@@ -8,17 +8,20 @@
     <div class="right menu">
         <?php
         session_start();
+        $notCU = "<div class=\"item\"><div id=\"signup\" class=\"ui primary button\">Signup</div></div><div class=\"item\"><div id=\"login\" class=\"ui button\">Login</div></div>";
         if (isset($_SESSION["CU_id"])) {
-            echo "<div class=\"item\">
-                    <div id=\"CU\">" . $_SESSION["CU_username"] . "</div>
-                </div>";
+            include(dirname(__DIR__).'/../get/PDO_connection.php');
+            $sql = "SELECT id FROM user WHERE id = " . $_SESSION["CU_id"] . ";";
+            $req = $bdd->query($sql);
+            if ($req->rowCount() > 0) {
+                $CU = "<div class=\"item\"><div id=\"CU\">" . $_SESSION["CU_username"] . "</div></div><div class=\"item\"><div id=\"logout\" class=\"ui button\">Logout</div></div>";
+                echo $CU;
+            } else {
+                unset($_SESSION["CU_id"]);
+                echo $notCU;
+            }
         } else {
-            echo "<div class=\"item\">
-                    <div id=\"signup\" class=\"ui primary button\">Signup</div>
-                </div>
-                <div class=\"item\">
-                    <div id=\"login\" class=\"ui button\">Login</div>
-                </div>";
+            echo $notCU;
         }
         ?>
     </div>

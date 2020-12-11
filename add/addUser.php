@@ -6,22 +6,26 @@ $email = $_POST["email"];
 
 include('../get/PDO_connection.php');
 
-// Préparation de la requête
-$sql = "INSERT INTO user (username, pass, email) VALUES ('" . $username . "', '" . $pass . "', '" . $email . "');";
-// Execution de la requête
+// On regarde si l'email de l'utilisateur n'est pas déjà dans la table user
+$sql = "SELECT email FROM user WHERE email = '" . $email . "';";
 $req = $bdd->query($sql);
+// Si non, alors on peut l'ajouter
+if (!$req->rowCount() > 0) {
+    $sql = "INSERT INTO user (username, pass, email) VALUES ('" . $username . "', '" . $pass . "', '" . $email . "');";
+    $req = $bdd->query($sql);
+}
 
-// On crée une session avec l'id de l'utilisateur connecté
+// On crée la session de l'utilisateur connecté
 session_start();
-$sql = "SELECT id,username,userRole FROM user WHERE email = '".$email."';";
+$sql = "SELECT id,username,email,userRole FROM user WHERE email = '" . $email . "';";
 echo $sql;
 $req = $bdd->query($sql);
 while ($donnees = $req->fetch()) {
     $_SESSION["CU_id"] = $donnees['id'];
     $_SESSION["CU_username"] = $donnees['username'];
+    $_SESSION["CU_email"] = $donnees['email'];
     $_SESSION["CU_userRole"] = $donnees['userRole'];
 }
 
 // Redirection automatique vers index.html
 header("Location: ../page/index.php");
-?>
