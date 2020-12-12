@@ -10,7 +10,7 @@
         session_start();
         $notCU = "<div class=\"item\"><div id=\"signup\" class=\"ui primary button\">Signup</div></div><div class=\"item\"><div id=\"login\" class=\"ui button\">Login</div></div>";
         if (isset($_SESSION["CU_id"])) {
-            include(dirname(__DIR__) . '/../get/PDO_connection.php');
+            include(dirname(__DIR__) . '/../services/PDO_connection.php');
             $sql = "SELECT id FROM user WHERE id = " . $_SESSION["CU_id"] . ";";
             $req = $bdd->query($sql);
             if ($req->rowCount() > 0) {
@@ -23,11 +23,11 @@
         } else {
             echo $notCU;
         }
-        if (isset($_SESSION["emailInDB"])) {
+        if (isset($_SESSION["errorMessage"])) {
             echo '<script type="text/javascript">',
-                'alert("Email albready taken !");',
+                'const errorText = "' . $_SESSION["errorMessage"] . '";',
                 '</script>';
-            unset($_SESSION["emailInDB"]);
+            unset($_SESSION["errorMessage"]);
         }
         ?>
     </div>

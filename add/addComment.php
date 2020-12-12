@@ -3,7 +3,7 @@
 $idAlbum = $_POST["idAlbum"];
 $commentText = $_POST["commentText"];
 
-include('../get/PDO_connection.php');
+include('../services/PDO_connection.php');
 
 // Préparation de la requête
 $sql = "INSERT INTO comment (commentText, idAlbum) VALUES ('" . $commentText . "', " . $idAlbum . ");";

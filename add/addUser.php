@@ -4,7 +4,7 @@ $username = $_POST["username"];
 $pass = $_POST["pass"];
 $email = $_POST["email"];
 
-include('../get/PDO_connection.php');
+include('../services/PDO_connection.php');
 
 // On regarde si l'email de l'utilisateur n'est pas déjà dans la table user
 $sql = "SELECT email FROM user WHERE email = '" . $email . "';";
@@ -18,7 +18,6 @@ if (!$req->rowCount() > 0) {
 
     // On crée la session de l'utilisateur connecté
     $sql = "SELECT id,username,email,userRole FROM user WHERE email = '" . $email . "';";
-    echo $sql;
     $req = $bdd->query($sql);
     while ($donnees = $req->fetch()) {
         $_SESSION["CU_id"] = $donnees['id'];
@@ -27,7 +26,7 @@ if (!$req->rowCount() > 0) {
         $_SESSION["CU_userRole"] = $donnees['userRole'];
     }
 } else {
-    $_SESSION["emailInDB"] = true;
+    $_SESSION["errorMessage"] = "Email address albready taken !";
 }
 
 // Redirection automatique vers index.html

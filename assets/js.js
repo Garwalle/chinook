@@ -11,19 +11,30 @@ $(".close.icon").click(function () {
 
 
 
-signShowed = false;
-loginShowed = false;
+var signShowed = false;
+var loginShowed = false;
+var errorShowed = false;
+var signupMessage = $("#signupMessage");
+var signup = $("#signup");
+var loginMessage = $("#loginMessage");
+var login = $("#login");
+var errorMessage = $('#errorMessage')
+
 $("#signup").click(function () {
     if (!signShowed) {
         if (loginShowed) {
-            $("#loginMessage").hide();
+            loginMessage.hide();
             loginShowed = false;
         }
-        $("#signupMessage").fadeIn(250);
+        if (errorShowed) {
+            errorMessage.hide();
+            errorShowed = false;
+        }
+        signupMessage.fadeIn(250);
         signShowed = true;
     }
     else {
-        $("#signupMessage").fadeOut(250);
+        signupMessage.fadeOut(250);
         signShowed = false;
     }
 });
@@ -31,23 +42,24 @@ $("#signup").click(function () {
 $("#login").click(function () {
     if (!loginShowed) {
         if (signShowed) {
-            $("#signupMessage").hide();
+            signupMessage.hide();
             signShowed = false;
         }
-        $("#loginMessage").fadeIn(250);
+        if (errorShowed) {
+            errorMessage.hide();
+            errorShowed = false;
+        }
+        loginMessage.fadeIn(250);
         loginShowed = true;
     }
     else {
-        $("#loginMessage").fadeOut(250);
+        loginMessage.fadeOut(250);
         loginShowed = false;
     }
 });
 
 $(document).mouseup(function (e) {
-    var signupMessage = $("#signupMessage");
-    var signup = $("#signup");
-    var loginMessage = $("#loginMessage");
-    var login = $("#login");
+
 
     if (!signupMessage.is(e.target) && signupMessage.has(e.target).length === 0 && !signup.is(e.target)) {
         signupMessage.fadeOut(250);
@@ -60,8 +72,8 @@ $(document).mouseup(function (e) {
     }
 });
 
-function alertEmailTaken() {
-    $(document).ready(function () {
-        alert("I am an alert box!");
-    });
+if (typeof errorText !== 'undefined') {
+    errorMessage.fadeIn(250);
+    $('#errorMessage p').html(errorText);
+    errorShowed = true;
 }

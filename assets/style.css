@@ -49,15 +49,7 @@
 	resize: none;
 }
 
-#signupMessage {
-	display: none;
-	right: 0.5vh;
-	top: 5.2vh;
-	position:absolute;
-	z-index: 10;
-}
-
-#loginMessage {
+#signupMessage, #loginMessage, #errorMessage {
 	display: none;
 	right: 0.5vh;
 	top: 5.2vh;

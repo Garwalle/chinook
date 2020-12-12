@@ -3,7 +3,7 @@
 $idArtist = $_POST["idArtist"];
 $title = $_POST["title"];
 
-include('../get/PDO_connection.php');
+include('../services/PDO_connection.php');
 
 // Préparation de la requête
 $sql = "INSERT INTO album (title, idArtist) VALUES ('" . $title . "', " . $idArtist . ");";

@@ -1,5 +1,5 @@
 <?php
-include('PDO_connection.php');
+include('../services/PDO_connection.php');
 
 // Préparation de la requête
 $sql = "SELECT id,firstname,lastName FROM artist;";

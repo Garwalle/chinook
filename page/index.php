@@ -19,6 +19,7 @@
 		include('include/navbar.php');
 		include('include/signup.html');
 		include('include/login.html');
+		include('include/errorMessage.html');
 		?>
 
 		<div id="container" class="ui container">
@@ -97,7 +98,7 @@
 					</div>
 
 				</div>
-				<form method="post" action="../get/clear.php" onsubmit="return confirm('Do you really want to clear all tables ?');">
+				<form method="post" action="../services/clear.php" onsubmit="return confirm('Do you really want to clear all tables ?');">
 					<button class="ui inverted red button" type="submit">Clear all tables</button>
 				</form>
 				<div class="ui divider"></div>
