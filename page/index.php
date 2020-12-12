@@ -10,6 +10,7 @@
 	include('../get/getArtist.php');
 	include('../get/getAlbum.php');
 	?>
+
 </head>
 
 <body>
@@ -42,7 +43,6 @@
 								<label>Last name</label>
 								<input type="text" name="lastname" placeholder="Artist last name" maxlength="255" required>
 							</div>
-
 							<button class="ui inverted button" type="submit">Submit</button>
 						</form>
 					</div>
@@ -53,7 +53,7 @@
 							<h2>Add an album :</h2>
 							<div class="required field">
 								<label>Album artist</label>
-								<select name="idArtist" required>
+								<select name="idArtist" class="ui search dropdown" required>
 									<?php
 									$i = 0;
 									foreach ($idArtist as &$id) {
@@ -78,7 +78,7 @@
 							<h2>Leave a comment :</h2>
 							<div class="required field">
 								<label>Album </label>
-								<select name="idAlbum" required>
+								<select name="idAlbum" class="ui search dropdown" required>
 									<?php
 									$i = 0;
 									foreach ($idAlbum as &$id) {

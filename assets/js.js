@@ -9,7 +9,7 @@ $(".close.icon").click(function () {
     $(this).parent().parent().fadeOut(250);
 });
 
-
+$('.ui.dropdown').dropdown();
 
 var signShowed = false;
 var loginShowed = false;

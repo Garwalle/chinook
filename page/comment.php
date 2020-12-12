@@ -15,7 +15,7 @@
 	<div id="body">
 
 		<?php
-		include('include/navbar.html');
+		include('include/navbar.php');
 		include('include/signup.html');
 		include('include/login.html');
 		?>
