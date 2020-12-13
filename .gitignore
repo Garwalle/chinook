@@ -1,2 +1,6 @@
 vendor/
+bdd/
 .env
+PDO_connection.php
+todo.md
+
