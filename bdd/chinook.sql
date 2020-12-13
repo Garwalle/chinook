@@ -29,7 +29,7 @@ CREATE TABLE `user` (
   `id` int(45) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `pass` varchar(20) NOT NULL,
-  `email` varchar(320) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `userRole` varchar(10) NOT NULL DEFAULT 'client',
   primary key (`id`, `email`)
 );

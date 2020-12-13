@@ -15,4 +15,3 @@ while ($donnees = $req->fetch()) {
 	array_push($title, $donnees['title']);
 	array_push($idArtistFK, $donnees['idArtist']);
 }
-?>
