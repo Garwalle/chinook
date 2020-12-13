@@ -12,4 +12,3 @@ $req = $bdd->query($sql);
 
 // Redirection automatique vers index.html
 header("Location: ../page/index.php");
-?>

@@ -15,4 +15,3 @@ while ($donnees = $req->fetch()) {
 	array_push($firstName, $donnees['firstname']);
 	array_push($lastName, $donnees['lastName']);
 }
-?>
