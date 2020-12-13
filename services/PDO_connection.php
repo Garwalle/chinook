@@ -11,7 +11,7 @@ $charset = "utf8";
 
 /* Remote */
 $host = "us-cdbr-east-02.cleardb.com";
-$db = "chinook";
+$db = "heroku_5454bed8938e79f";
 $user = "ba54402293b69f";
 $pass = "618a3852";
 $charset = "utf8";
