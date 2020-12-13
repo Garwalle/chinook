@@ -6,9 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="../assets/style.css">
 
 	<?php
-	include('include/head.html');
-	include('../get/getArtist.php');
-	include('../get/getAlbum.php');
+	require_once('include/head.html');
+	require_once('../get/getArtist.php');
+	require_once('../get/getAlbum.php');
 	?>
 
 </head>
@@ -17,10 +17,10 @@
 	<div id="body">
 
 		<?php
-		include('include/navbar.php');
-		include('include/signup.html');
-		include('include/login.html');
-		include('include/errorMessage.html');
+		require_once('include/navbar.php');
+		require_once('include/signup.html');
+		require_once('include/login.html');
+		require_once('include/errorMessage.html');
 		?>
 
 		<div id="container" class="ui container">
