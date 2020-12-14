@@ -6,6 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="../assets/style.css">
 
 	<?php
+	// Tous les "require_once" présent ci-dessous on pour fonction de décharger l'index de lignes de codes.
+	// Au lieur d'avoir un seul gros fichier, on en a plusieurs léger.
 	require_once('include/head.html');
 	require_once('../get/getArtist.php');
 	require_once('../get/getAlbum.php');

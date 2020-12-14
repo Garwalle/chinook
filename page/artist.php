@@ -6,8 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="../assets/style.css">
 
 	<?php
-	include('include/head.html');
-	include('../get/getArtist.php');
+	require_once('include/head.html');
+	require_once('../get/getArtist.php');
 	?>
 </head>
 
@@ -15,9 +15,9 @@
 	<div id="body">
 
 		<?php
-		include('include/navbar.php');
-		include('include/signup.html');
-		include('include/login.html');
+		require_once('include/navbar.php');
+		require_once('include/signup.html');
+		require_once('include/login.html');
 		?>
 
 		<div id="container" class="ui container">

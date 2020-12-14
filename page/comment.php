@@ -6,8 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="../assets/style.css">
 
 	<?php
-	include('include/head.html');
-	include('../get/getComment.php');
+	require_once('include/head.html');
+	require_once('../get/getComment.php');
 	?>
 </head>
 
@@ -15,9 +15,9 @@
 	<div id="body">
 
 		<?php
-		include('include/navbar.php');
-		include('include/signup.html');
-		include('include/login.html');
+		require_once('include/navbar.php');
+		require_once('include/signup.html');
+		require_once('include/login.html');
 		?>
 
 		<div id="container" class="ui container">
@@ -27,22 +27,22 @@
 				<div class="ui divider"></div>
 
 
-				<table class="ui inverted celled table">
+				<table class="ui <?php  if ($_SESSION["CU_userRole"] === "manager") echo "selectable"; ?> inverted celled table">
 					<thead>
 						<tr>
-							<th>Id</th>
 							<th>Comment text</th>
-							<th>Id album</th>
+							<th>Album title</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
 						$i = 0;
+						$tr = "<tr>";
+						if ($_SESSION["CU_userRole"] === "manager") $tr = "<tr onclick=\"window.location.href='patch/commentPatch.php?id=";
 						foreach ($idComment as &$id) {
-							echo "<tr>";
-							echo "<td>" . $id . "</td>";
+							echo $tr . $id . "'\">";
 							echo "<td>" . $commentText[$i] . "</td>";
-							echo "<td>" . $idAlbumFK[$i] . "</td>";
+							echo "<td>" . $titleAlbum[$i] . "</td>";
 							echo "</tr>";
 							$i++;
 						}
