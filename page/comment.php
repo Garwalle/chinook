@@ -27,7 +27,7 @@
 				<div class="ui divider"></div>
 
 
-				<table class="ui <?php  if ($_SESSION["CU_userRole"] === "manager") echo "selectable"; ?> inverted celled table">
+				<table class="ui <?php if ($_SESSION["CU_userRole"] === "manager") echo "selectable"; ?> inverted celled table">
 					<thead>
 						<tr>
 							<th>Comment text</th>
@@ -37,10 +37,13 @@
 					<tbody>
 						<?php
 						$i = 0;
-						$tr = "<tr>";
-						if ($_SESSION["CU_userRole"] === "manager") $tr = "<tr onclick=\"window.location.href='patch/commentPatch.php?id=";
+						if (isset($_SESSION["CU_userRole"]) && $_SESSION["CU_userRole"] === "manager") $manager = true;
 						foreach ($idComment as &$id) {
-							echo $tr . $id . "'\">";
+							if (isset($manager)) {
+								echo "<tr onclick=\"window.location.href='patch/commentPatch.php?id=$id'\">";
+							} else {
+								echo "<tr>";
+							}
 							echo "<td>" . $commentText[$i] . "</td>";
 							echo "<td>" . $titleAlbum[$i] . "</td>";
 							echo "</tr>";
