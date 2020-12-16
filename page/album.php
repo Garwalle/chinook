@@ -30,9 +30,8 @@
 				<table class="ui inverted celled table">
 					<thead>
 						<tr>
-							<th>Id</th>
 							<th>Title</th>
-							<th>Id Artist</th>
+							<th>ALbum author</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -40,9 +39,8 @@
 						$i = 0;
 						foreach ($idAlbum as &$id) {
 							echo "<tr>";
-							echo "<td>" . $id . "</td>";
 							echo "<td>" . $title[$i] . "</td>";
-							echo "<td>" . $idArtistFK[$i] . "</td>";
+							echo "<td>" . $albumAuthor[$i] . "</td>";
 							echo "</tr>";
 							$i++;
 						}
